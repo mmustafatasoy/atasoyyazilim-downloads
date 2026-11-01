@@ -1,25 +1,39 @@
-# Atasoy Yazılım — Resmî Uygulama İndirmeleri
+# Atasoy Yazılım — Uygulama İndirme Dosyaları
 
-📱 **Atasoy Yazılım** projelerinin APK dağıtım deposu.
+Burası **sadece Android uygulamalarının yayımlanmış APK dosyaları** için herkese açık indirme alanıdır. Uygulamaların kaynak kodu ve geliştirici depoları burada paylaşılmaz.
 
-**Web sitesi:** https://www.atasoyyazilim.com  
-**İndirme merkezi:** https://www.atasoyyazilim.com/indirmeler/
+**Uygulama kataloğu:** https://atasoyyazilim.com/indirmeler/  
+**EYMEN TV indirme sayfası:** https://atasoyyazilim.com/indir/eymen-tv/  
+**NUR Kur’an indirme sayfası:** https://atasoyyazilim.com/indir/nur-kuran/
 
-## İndirme ve yayınlama
+## Sürüm yayınlama (manuel)
 
-Uygulama APK dosyaları bu deponun **Releases** bölümünde yayımlanır. Her sürüm, Atasoy Studio yönetici uygulamasından yüklenebilir. Yazılım sürümü, cihaz uyumluluğu ve diğer ayrıntılar Atasoy Yazılım sitesindeki ilgili uygulama sayfasında belirtilir.
+Atasoy Yazılım sitesinin indirme sistemi hazırdır. APK dosyaları **bu deponun Releases bölümüne manuel yüklendiğinde** ilgili uygulamanın **Güncel sürüm / Eski sürümler** düğmelerine otomatik yansır. Bu yalnızca sürüm listesini okumaktır; kaynak depolardan dosya aktarımı veya otomatik APK yayımlama yapılmaz. **API anahtarı veya depo erişim tokenı gerekmez.**
 
-**[APK sürümlerini görüntüle](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases)**
+EYMEN TV için beklenen Release etiket örnekleri:
 
-> Dosya indirmeden önce uygulamanın sürümünü, kaynağını ve cihaz uyumluluğunu kontrol edin. Android'in güvenlik uyarılarını göz ardı etmeyin.
+| Sürüm | GitHub Releases etiketi | APK dosya adı |
+| --- | --- | --- |
+| 0.12 | `eymen-tv-v0.12` | `EYMEN-TV-Kanal-Listesi-v0.12.apk` |
+| 0.11 | `eymen-tv-v0.11` | `EYMEN-TV-Kanal-Listesi-v0.11.apk` |
+| 0.10 | `eymen-tv-v0.10` | `EYMEN-TV-Kanal-Listesi-v0.10.apk` |
+| 0.9 | `eymen-tv-v0.9` | `EYMEN-TV-Kanal-Listesi-v0.9.apk` |
 
-## Depo yapısı ve gizlilik
+Daha eski sürümler de aynı etiket düzeniyle ayrı tutulabilir. Sürüm etiketleri mevcut release'lerle çakışmamalı; eski bir APK yerine farklı içerikli yeni dosya yazılmamalıdır. Yayınlanan sürümün ilk paylaşıldığı tarihi koruyun.
 
-- Bu depo yalnızca yayımlanmasına izin verilen dosyaların **herkese açık indirme dağıtımı** içindir.
-- Atasoy Yazılım web sitesinin **özel kaynak kodları** başka bir Private depoda tutulur ve bu depoya eklenmez.
-- GitHub erişim token'ları, API anahtarları, şifreler veya gizli yapılandırmalar **asla** buraya yüklenmez.
-- APK dosyalarını repoya commit etmek yerine **GitHub Releases** üzerinden yayınlayın.
+NUR Kur’an için örnek etiket: `nur-v0.9.0-test`. Sürüm içeriklerinin gerçek imzalama durumuna göre `prerelease` / TEST bilgisi doğru işaretlenmelidir.
 
-## Yönetici notu
+### Manual yayın sırası
 
-Bu deponun Public olması gerekir; aksi hâlde ziyaretçiler GitHub hesabı olmadan APK indiremez. **Yalnızca bu indirme deposunu Public yapın; web kaynak kod deposunu Private bırakın.**
+1. [Releases](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases) → **Draft a new release**.
+2. Uygulama için yukarıdaki formata uyan yeni bir tag oluşturun.
+3. İlgili, gerçekten derlenmiş APK dosyasını asset olarak ekleyin; sürüm notlarını ve cihaz uyumluluğunu yazın.
+4. İmza durumu test ise **Set as a pre-release** seçin. Dosya boyutu ve varsa SHA-256 kontrolünü yapın.
+5. **Publish release** ile yayımlayın. Sitenin indirme sayfası gerçek APK'yı, sürümü ve boyutu kendiliğinden görüntüler; site kodunu her sürüm için değiştirmeye gerek yoktur.
+
+## Güvenlik
+
+- **Özel geliştirme deposu bağlantılarını** yayın açıklamalarına eklemeyin.
+- Bu depoda API token, kişisel erişim anahtarı, parolalar veya uygulama kaynak kodu bulunmamalıdır.
+- APK sürümleri arasında farklı Android imzası kullanılmışsa eski sürümün üzerine yükleme yapılamayabilir.
+- Public depodaki dosyalar herkes tarafından indirilebilir; telif ve lisans hakları kontrol edilmeden hiçbir APK dosyası yayımlanmamalıdır.
