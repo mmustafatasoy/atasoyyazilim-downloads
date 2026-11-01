@@ -21,6 +21,15 @@ EYMEN TV için beklenen Release etiket örnekleri:
 
 Daha eski sürümler de aynı etiket düzeniyle ayrı tutulabilir. Sürüm etiketleri mevcut release'lerle çakışmamalı; eski bir APK yerine farklı içerikli yeni dosya yazılmamalıdır. Yayınlanan sürümün ilk paylaşıldığı tarihi koruyun.
 
+Tekno Play için beklenen **manuel APK yayın etiketleri**:
+
+| Sürüm | GitHub Releases etiketi | APK dosya adı |
+| --- | --- | --- |
+| 0.3.1 | `tekno-play-v0.3.1` | `TeknoPlay-0.3.1-debug.apk` |
+| 0.3.0 | `tekno-play-v0.3.0` | `TeknoPlay-0.3.0-debug.apk` |
+
+**Tekno Play APK'ları özel geliştirme deposundadır ve henüz bu Public indirme deposuna aktarılmamıştır.** Otomatik aktarım yapılmaz. Her sürümün gerçek debug APK dosyasını manuel Releases varlığına ekleyin; kaynak kodu, özel proje URL'sini veya API anahtarını paylaşmayın. Debug dosyaları `prerelease` olarak işaretlenmelidir.
+
 NUR Kur’an için örnek etiket: `nur-v0.9.0-test`. Sürüm içeriklerinin gerçek imzalama durumuna göre `prerelease` / TEST bilgisi doğru işaretlenmelidir.
 
 ### Manual yayın sırası
