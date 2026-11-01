@@ -96,3 +96,19 @@ jobs:
               --prerelease \
               -R "$REPOSITORY"
           fi
+
+      - name: Verify the public release contains a downloadable NUR APK
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          FILE_URL="$(gh api "repos/${GITHUB_REPOSITORY}/releases/tags/nur-v0.9.0-test" \
+            --jq '.assets[] | select(.name == "NUR-Quran-v0.9.0-TEST.apk" and .size > 0) | .browser_download_url' | head -n1)"
+          case "$FILE_URL" in
+            https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/download/nur-v0.9.0-test/*)
+              echo "Verified public NUR APK asset: $FILE_URL" ;;
+            *)
+              echo "::error::Published NUR APK asset not found or has invalid download URL"
+              exit 1 ;;
+          esac
