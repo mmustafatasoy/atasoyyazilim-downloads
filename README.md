@@ -46,3 +46,19 @@ NUR Kur’an için örnek etiket: `nur-v0.9.0-test`. Sürüm içeriklerinin ger�
 - Bu depoda API token, kişisel erişim anahtarı, parolalar veya uygulama kaynak kodu bulunmamalıdır.
 - APK sürümleri arasında farklı Android imzası kullanılmışsa eski sürümün üzerine yükleme yapılamayabilir.
 - Public depodaki dosyalar herkes tarafından indirilebilir; telif ve lisans hakları kontrol edilmeden hiçbir APK dosyası yayımlanmamalıdır.
+
+## EYMEN OS TV tam sürüm arşivi
+
+EYMEN OS TV'nin yayınlanmış yedi sürümü, **TV APK + telefon kurulum APK** olmak üzere 14 dosya, bu deponun Releases bölümüne `eymen-os-v...` etiketleriyle kopyalanır. Aktarımda her dosyanın boyutu ve GitHub'daki orijinal SHA-256 özeti doğrulanır. Kaynak kodu aktarılmaz.
+
+| Sürüm | TV APK | Telefon APK | Arşiv bağlantısı |
+| --- | --- | --- | --- |
+| 1.1.1 | EYMEN-OS-TV.apk | EYMEN-Kurulum.apk | [eymen-os-v1.1.1](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/tag/eymen-os-v1.1.1) |
+| 1.1.0 | EYMEN-OS-TV.apk | EYMEN-Kurulum.apk | [eymen-os-v1.1.0](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/tag/eymen-os-v1.1.0) |
+| 1.0.4 | EYMEN-OS-TV.apk | EYMEN-Kurulum.apk | [eymen-os-v1.0.4](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/tag/eymen-os-v1.0.4) |
+| 1.0.3 | EYMEN-OS-TV.apk | EYMEN-Kurulum.apk | [eymen-os-v1.0.3](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/tag/eymen-os-v1.0.3) |
+| 1.0.2 | EYMEN-OS-TV.apk | EYMEN-Kurulum.apk | [eymen-os-v1.0.2](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/tag/eymen-os-v1.0.2) |
+| 1.0.1 | EYMEN-OS-TV.apk | EYMEN-Kurulum.apk | [eymen-os-v1.0.1](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/tag/eymen-os-v1.0.1) |
+| 1.0.0 | EYMEN-OS-TV.apk | EYMEN-Kurulum.apk | [eymen-os-v1.0.0](https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/tag/eymen-os-v1.0.0) |
+
+**Not:** Bu depo içindeki eşit sürüm isimleri birbirinden ayrı sürüm etiketlerine sahiptir. İlk kaynak yayın tarihi sürüm açıklamasında saklanır; yeniden arşivlendiği tarih GitHub üzerinde değişebilir. İki APK'nin imza durumunu yalnızca dosya adından yola çıkarak garanti etmeyin. Ayrıntılar: `eymen-os-archive/manifest.json`.

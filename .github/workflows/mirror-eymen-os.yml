@@ -1,0 +1,29 @@
+name: Mirror EYMEN OS TV release archive
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/mirror-eymen-os.yml'
+      - 'eymen-os-archive/manifest.json'
+      - 'eymen-os-archive/mirror.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: eymen-os-release-archive
+  cancel-in-progress: false
+
+jobs:
+  mirror:
+    if: github.repository == 'mmustafatasoy/atasoyyazilim-downloads'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mirror and verify all 14 APK assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEST_REPOSITORY: ${{ github.repository }}
+        run: python3 eymen-os-archive/mirror.py

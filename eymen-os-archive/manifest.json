@@ -1,0 +1,147 @@
+{
+  "source_repository": "mmaapps/eymenostv",
+  "source_release_page": "https://github.com/mmaapps/eymenostv/releases",
+  "destination_repository": "mmustafatasoy/atasoyyazilim-downloads",
+  "archived_versions": [
+    {
+      "version": "1.1.1",
+      "source_tag": "v1.1.1",
+      "source_published_at": "2026-11-02T20:08:32Z",
+      "notes": "# EYMEN OS TV 1.1.1\n\nVestel 17MB170 / Android 11 TV için EYMEN OS.\n\n- Yeni sürümler artık TV'ye kendiliğinden gelir, ekranda imzalı güncelleme uyarısı çıkar\n- Ayarlar ekranı renkli kartlarla ve anlık durum bilgisiyle yenilendi\n- Ana ekranın altına Atasoy Yazılım bandı eklendi, OK ile QR kod açılır\n- EYMEN Uydu'da eklediğin logolar ana ekranda da görünür\n\nDosyalar:\n\n`EYMEN-Kurulum.apk`: telefona kurulur. İlk kurulumu ve Hızlı güncelle'yi yapar.\n`EYMEN-OS-TV.apk`: TV uygulaması. Kurulum uygulamasının içinde de gelir.\n\nGeri dönüş: Telefon > Komut Merkezi > \"Eski ekranı geri getir, EYMEN OS'u kaldır\".",
+      "assets": [
+        {
+          "name": "EYMEN-OS-TV.apk",
+          "bytes": 8426618,
+          "sha256": "16f041db7837adae337cc11bd17d082a0dc92a3a6cfb3eaec01e2f71512821f3",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.1.1/EYMEN-OS-TV.apk"
+        },
+        {
+          "name": "EYMEN-Kurulum.apk",
+          "bytes": 17146442,
+          "sha256": "0a6cce272e52e523f7d7b866948dab2b6471b261d324fad61530f3c18c5c7340",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.1.1/EYMEN-Kurulum.apk"
+        }
+      ]
+    },
+    {
+      "version": "1.1.0",
+      "source_tag": "v1.1.0",
+      "source_published_at": "2026-11-02T17:04:34Z",
+      "notes": "# EYMEN OS TV 1.1.0\n\nVestel 17MB170 / Android 11 TV için EYMEN OS.\n\n- Yeni sürümler artık TV'ye kendiliğinden gelir, ekranda imzalı güncelleme uyarısı çıkar\n- Ayarlar ekranı renkli kartlarla ve anlık durum bilgisiyle yenilendi\n- Ana ekranın altına Atasoy Yazılım bandı eklendi, OK ile QR kod açılır\n- EYMEN Uydu'da eklediğin logolar ana ekranda da görünür\n\nDosyalar:\n\n`EYMEN-Kurulum.apk`: telefona kurulur. İlk kurulumu ve Hızlı güncelle'yi yapar.\n`EYMEN-OS-TV.apk`: TV uygulaması. Kurulum uygulamasının içinde de gelir.\n\nGeri dönüş: Telefon > Komut Merkezi > \"Eski ekranı geri getir, EYMEN OS'u kaldır\".",
+      "assets": [
+        {
+          "name": "EYMEN-OS-TV.apk",
+          "bytes": 8426618,
+          "sha256": "817c148ea783b42c6d7b097950975c5afea397738072fef7fdd6c56cbf87e224",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.1.0/EYMEN-OS-TV.apk"
+        },
+        {
+          "name": "EYMEN-Kurulum.apk",
+          "bytes": 17146062,
+          "sha256": "c7d38554bec74f9c408663bc3858d408a929b0775404d0bfa2ba63b4f899ef4f",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.1.0/EYMEN-Kurulum.apk"
+        }
+      ]
+    },
+    {
+      "version": "1.0.4",
+      "source_tag": "v1.0.4",
+      "source_published_at": "2026-11-02T11:42:58Z",
+      "notes": "# EYMEN OS TV 1.0.4\n\nVestel 17MB170 / Android 11 TV için EYMEN OS.\n\n- `EYMEN-Kurulum.apk`: telefona kurulur. TV'ye Wi-Fi ile bağlanır ve kurulumu yapar.\n- `EYMEN-OS-TV.apk`: TV uygulaması. Kurulum uygulamasının içinde de gelir.\n\nGeri dönüş: Telefon > Komut Merkezi > \"Eski ekranı geri getir, EYMEN OS'u kaldır\".",
+      "assets": [
+        {
+          "name": "EYMEN-OS-TV.apk",
+          "bytes": 7815785,
+          "sha256": "b9c0b65f00a9346295fcac8ec96bc5ac1ea65791f5eef3e7b8e638eb2c6fa182",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.4/EYMEN-OS-TV.apk"
+        },
+        {
+          "name": "EYMEN-Kurulum.apk",
+          "bytes": 16278298,
+          "sha256": "6fb4a9c0d1f7997354a9bd040b9e9c8c66cd7e885017dabd691ef04287b497d4",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.4/EYMEN-Kurulum.apk"
+        }
+      ]
+    },
+    {
+      "version": "1.0.3",
+      "source_tag": "v1.0.3",
+      "source_published_at": "2026-11-02T10:11:48Z",
+      "notes": "# EYMEN OS TV 1.0.3\n\nVestel 17MB170 / Android 11 TV için EYMEN OS.\n\n- `EYMEN-Kurulum.apk`: telefona kurulur. TV'ye Wi-Fi ile bağlanır ve kurulumu yapar.\n- `EYMEN-OS-TV.apk`: TV uygulaması. Kurulum uygulamasının içinde de gelir.\n\nGeri dönüş: Telefon > Komut Merkezi > \"Eski ekranı geri getir, EYMEN OS'u kaldır\".",
+      "assets": [
+        {
+          "name": "EYMEN-OS-TV.apk",
+          "bytes": 7815789,
+          "sha256": "242844b82815da0b4172f57e0f8d95c78854be293213d1942e9839f223f69d85",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.3/EYMEN-OS-TV.apk"
+        },
+        {
+          "name": "EYMEN-Kurulum.apk",
+          "bytes": 16276974,
+          "sha256": "8b19672fd193d7cfa39aef47042cbd47185691fd5fad06f4d821197c54451c01",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.3/EYMEN-Kurulum.apk"
+        }
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "source_tag": "v1.0.2",
+      "source_published_at": "2026-11-02T09:58:16Z",
+      "notes": "# EYMEN OS TV 1.0.2\n\nVestel 17MB170 / Android 11 TV için EYMEN OS.\n\n- `EYMEN-Kurulum.apk`: telefona kurulur. TV'ye Wi-Fi ile bağlanır ve kurulumu yapar.\n- `EYMEN-OS-TV.apk`: TV uygulaması. Kurulum uygulamasının içinde de gelir.\n\nGeri dönüş: Telefon > Komut Merkezi > \"Eski ekranı geri getir, EYMEN OS'u kaldır\".",
+      "assets": [
+        {
+          "name": "EYMEN-OS-TV.apk",
+          "bytes": 7815773,
+          "sha256": "77e5c291a15d5656ed8d42d619e5ca11bd4737999566b4e4490fc088319eb2d1",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.2/EYMEN-OS-TV.apk"
+        },
+        {
+          "name": "EYMEN-Kurulum.apk",
+          "bytes": 16275886,
+          "sha256": "2c74276ad4251cab323fbe183a80b69c5139b38407dbd33d2e033aee4444344d",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.2/EYMEN-Kurulum.apk"
+        }
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "source_tag": "v1.0.1",
+      "source_published_at": "2026-11-02T09:39:20Z",
+      "notes": "# EYMEN OS TV 1.0.1\n\nVestel 17MB170 / Android 11 TV için EYMEN OS.\n\n- `EYMEN-Kurulum.apk`: telefona kurulur. TV'ye Wi-Fi ile bağlanır ve kurulumu yapar.\n- `EYMEN-OS-TV.apk`: TV uygulaması. Kurulum uygulamasının içinde de gelir.\n\nGeri dönüş: Telefon > Komut Merkezi > \"Eski ekranı geri getir, EYMEN OS'u kaldır\".",
+      "assets": [
+        {
+          "name": "EYMEN-OS-TV.apk",
+          "bytes": 7815773,
+          "sha256": "443f85a913081a4cf0f4ce04e0dd707d4c7316b9f79bcad7b41bd6ec434a7554",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.1/EYMEN-OS-TV.apk"
+        },
+        {
+          "name": "EYMEN-Kurulum.apk",
+          "bytes": 16272978,
+          "sha256": "fed28ca63e4e133eb779878ad87760919464f458c82cabebc49045bc1f92d3be",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.1/EYMEN-Kurulum.apk"
+        }
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "source_tag": "v1.0.0",
+      "source_published_at": "2026-11-02T09:36:18Z",
+      "notes": "# EYMEN OS TV 1.0.0\n\nVestel 17MB170 / Android 11 TV için EYMEN OS.\n\n- `EYMEN-Kurulum.apk`: telefona kurulur. TV'ye Wi-Fi ile bağlanır ve kurulumu yapar.\n- `EYMEN-OS-TV.apk`: TV uygulaması. Kurulum uygulaması bunu kendisi indirir.\n\nGeri dönüş: Telefon > Komut Merkezi > \"Eski ekranı geri getir, EYMEN OS'u kaldır\".",
+      "assets": [
+        {
+          "name": "EYMEN-OS-TV.apk",
+          "bytes": 7815773,
+          "sha256": "25e88cb3cba6a60ca692c242aabde58d56aa8195875b28cbd4d9327c2f857f86",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.0/EYMEN-OS-TV.apk"
+        },
+        {
+          "name": "EYMEN-Kurulum.apk",
+          "bytes": 792513,
+          "sha256": "dc2d9cfed6ca11c78c83ba7a96d94acbb7732c4c9aec45f9041e4e65a9d8e484",
+          "source_url": "https://github.com/mmaapps/eymenostv/releases/download/v1.0.0/EYMEN-Kurulum.apk"
+        }
+      ]
+    }
+  ]
+}
