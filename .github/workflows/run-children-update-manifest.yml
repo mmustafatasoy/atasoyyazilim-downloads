@@ -1,0 +1,95 @@
+name: RUN CHILDREN - Yeni APKyi uygulamaya bildir
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  update-android-manifest:
+    if: startsWith(github.event.release.tag_name, 'run-children-android-v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Surum APK'sini resmi Release'dan indir ve dogrula
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RC_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          CODE="${RC_TAG#run-children-android-v}"
+          [[ "$CODE" =~ ^[0-9]+$ ]] || { echo "::error::Invalid Android version code"; exit 1; }
+          gh release download "$RC_TAG" --repo "$GITHUB_REPOSITORY" \
+            --pattern "RUN_CHILDREN_RELEASE_SIGNED.apk" \
+            --dir "$RUNNER_TEMP"
+          APK="$RUNNER_TEMP/RUN_CHILDREN_RELEASE_SIGNED.apk"
+          test -s "$APK"
+          unzip -tqq "$APK"
+          unzip -Z1 "$APK" | grep -qx 'AndroidManifest.xml'
+          SIZE="$(stat -c %s "$APK")"
+          SHA="$(sha256sum "$APK" | cut -d' ' -f1)"
+          export RC_CODE="$CODE" RC_SIZE="$SIZE" RC_SHA="$SHA"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          code = int(os.environ["RC_CODE"])
+          tag = os.environ["RC_TAG"]
+          obj = {
+              "schema": 1,
+              "packageName": "com.atasoyyazilim.runchildren",
+              "versionCode": code,
+              "versionName": f"0.1.{code}",
+              "apkUrl": (
+                  f"https://github.com/{os.environ['GITHUB_REPOSITORY']}"
+                  f"/releases/download/{tag}/RUN_CHILDREN_RELEASE_SIGNED.apk"
+              ),
+              "sha256": os.environ["RC_SHA"],
+              "sizeBytes": int(os.environ["RC_SIZE"]),
+              "notes": "RUN CHILDREN yeni grafikler ve oyun iyilestirmeleri."
+          }
+          Path("/tmp/runchildren-latest.json").write_text(
+              json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf8"
+          )
+          PY
+          echo "Published Android APK version $CODE, SHA256 $SHA"
+
+      - name: Uygulamanin gorup indirecegi latest.json dosyasini guncelle
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RC_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          set -euo pipefail
+          API="repos/$GITHUB_REPOSITORY/contents/run-children/latest.json"
+          CODE="${RC_TAG#run-children-android-v}"
+          CONTENT="$(base64 -w0 /tmp/runchildren-latest.json)"
+          # Handle a concurrent update by the private publishing workflow.
+          for attempt in 1 2 3 4; do
+            SHA="$(gh api "$API" --jq '.sha' 2>/dev/null || true)"
+            EXISTING="$(gh api "$API" --jq '.content' 2>/dev/null | tr -d '\n' | base64 -d 2>/dev/null || true)"
+            if [[ -n "$EXISTING" ]]; then
+              OLD_CODE="$(printf '%s' "$EXISTING" | python3 -c 'import json,sys;print(json.load(sys.stdin).get("versionCode",0))' 2>/dev/null || echo 0)"
+              if [[ "$OLD_CODE" =~ ^[0-9]+$ ]] && (( OLD_CODE >= CODE )); then
+                echo "Manifest already current: $OLD_CODE >= $CODE"
+                exit 0
+              fi
+            fi
+            if [[ -n "$SHA" ]]; then
+              if gh api --method PUT "$API" -f message="RUN CHILDREN Android v$CODE update" \
+                  -f content="$CONTENT" -f sha="$SHA" >/dev/null; then
+                echo "RUN CHILDREN update metadata now advertises v$CODE"
+                exit 0
+              fi
+            else
+              if gh api --method PUT "$API" -f message="RUN CHILDREN Android v$CODE update" \
+                  -f content="$CONTENT" >/dev/null; then
+                exit 0
+              fi
+            fi
+            sleep 2
+          done
+          echo "::error::Could not publish the latest RUN CHILDREN update manifest"
+          exit 1
