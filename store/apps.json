@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "minStoreVersionCode": 1,
+  "requireAccount": false,
+  "discover": {"repo": "mmustafatasoy/atasoyyazilim-downloads", "exclude": ["run-children"]},
+  "apps": [
+    {"id": "eymen-store", "name": "EYMEN Store", "tagline": "Atasoy Yazılım uygulama mağazası", "platform": "phone", "category": "Mağaza", "tone": "#17224A", "hidden": true,
+     "repo": "mmustafatasoy/atasoyyazilim-downloads", "tag": "^eymen-store-v", "asset": "\\.apk$", "prerelease": true},
+    {"id": "eymen-gelir", "name": "EYMEN GELİR", "tagline": "Aile bütçesi tek ekranda", "platform": "phone", "category": "Finans", "tone": "#0C4A38", "featured": true,
+     "repo": "mmustafatasoy/Gelirgider", "tag": "^v\\d", "asset": "\\.apk$", "page": "https://atasoyyazilim.com/indir/eymen-gelir/",
+     "highlights": ["Gelir gider özeti", "Fatura hatırlatma", "ZIP yedek"]},
+    {"id": "eymen-tv", "name": "EYMEN TV", "tagline": "Kanal listesi ve program rehberi", "platform": "tv", "category": "TV", "tone": "#2A1F66", "featured": true,
+     "repo": "mmustafatasoy/EymenTv", "tag": "^eymen-tv-v", "asset": "\\.apk$", "page": "https://atasoyyazilim.com/indir/eymen-tv/",
+     "highlights": ["Canlı yayın", "Favori kanallar", "Program rehberi"]},
+    {"id": "eymen-os-tv", "name": "EYMEN OS TV", "tagline": "Televizyona yeni ana ekran", "platform": "tv", "category": "TV", "tone": "#1E2A6B", "featured": true, "iconFrom": "eymen-os", "shotsFrom": "eymen-os",
+     "repo": "mmustafatasoy/atasoyyazilim-downloads", "tag": "^eymen-os-v", "asset": "^EYMEN-OS-TV\\.apk$", "page": "https://atasoyyazilim.com/indir/eymen-os/",
+     "highlights": ["Yeni ana ekran", "Telefondan kurulum", "Otomatik güncelleme"]},
+    {"id": "eymen-kurulum", "name": "EYMEN Kurulum", "tagline": "TV kurulumunu telefondan yap", "platform": "phone", "category": "Araçlar", "tone": "#1E2A6B", "iconFrom": "eymen-os", "shotsFrom": "eymen-os",
+     "repo": "mmustafatasoy/atasoyyazilim-downloads", "tag": "^eymen-os-v", "asset": "^EYMEN-Kurulum\\.apk$", "page": "https://atasoyyazilim.com/indir/eymen-os/",
+     "highlights": ["Wi-Fi ile bağlanır", "Hızlı güncelleme", "Eski ekrana dönüş"]},
+    {"id": "nur-kuran", "name": "NUR Kur’an-ı Kerim", "tagline": "Sesli Kur’an ve Türkçe meal", "platform": "phone", "category": "İbadet", "tone": "#0E4F46", "featured": true,
+     "repo": "mmustafatasoy/atasoyyazilim-downloads", "tag": "^nur-v", "asset": "\\.apk$", "prerelease": true, "page": "https://atasoyyazilim.com/indir/nur-kuran/",
+     "highlights": ["114 sure", "Türkçe meal", "Elifba"]},
+    {"id": "tekno-play", "name": "Tekno Play", "tagline": "Video ve canlı TV oynatıcı", "platform": "phone", "category": "Video", "tone": "#3B2A8C", "soon": true, "page": "https://atasoyyazilim.com/yazilim/tekno-play/",
+     "highlights": ["Video", "Canlı TV", "Yüzen pencere"]}
+  ]
+}
