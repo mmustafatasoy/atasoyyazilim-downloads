@@ -1,0 +1,330 @@
+{
+ "generatedAt": "2026-11-05T09:06:51Z",
+ "schema": 1,
+ "minStoreVersionCode": 1,
+ "requireAccount": false,
+ "apps": [
+  {
+   "id": "eymen-tv",
+   "name": "EYMEN TV",
+   "tagline": "Kanal listesi ve program rehberi",
+   "platform": "tv",
+   "category": "TV",
+   "tone": "#2A1F66",
+   "page": "https://atasoyyazilim.com/indir/eymen-tv/",
+   "highlights": [
+    "Canlı yayın",
+    "Favori kanallar",
+    "Program rehberi"
+   ],
+   "featured": true,
+   "hidden": false,
+   "packageName": "com.eymen.uydukontrol",
+   "versionCode": 25,
+   "versionName": "2.5",
+   "minSdk": 26,
+   "label": "EYMEN TV",
+   "sha256": "d0c66065d1ce12af504a3a560a6726b45d82a17748b07a6c0e9e34d8e9cef9dc",
+   "debugSigned": false,
+   "assetId": 708855812,
+   "sizeBytes": 10440340,
+   "apkUrl": "https://github.com/mmustafatasoy/EymenTv/releases/download/eymen-tv-v2.5/EYMEN-TV-2.5.apk",
+   "updatedAt": "2026-11-04T08:47:15Z",
+   "downloads": 1,
+   "notes": [
+    "EYMEN TV 2.5",
+    "v0.12 ve sonrası sürümlerin üzerine güncelleme olarak kurulur; gizlenen kanallar, favorile",
+    "2.5 ile gelenler",
+    "Radyo kanallarında \"Uydu sinyali yok\" yazısı kaldırıldı; ekranı tanıtım kaplıyor"
+   ],
+   "status": "ready",
+   "icon": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/icons/eymen-tv.png",
+   "shots": [
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-tv/01.webp",
+     "w": 1334,
+     "h": 420
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-tv/02.webp",
+     "w": 1471,
+     "h": 420
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-tv/03.webp",
+     "w": 1505,
+     "h": 420
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-tv/04.webp",
+     "w": 1709,
+     "h": 420
+    }
+   ]
+  },
+  {
+   "id": "eymen-gelir",
+   "name": "EYMEN GELİR",
+   "tagline": "Aile bütçesi tek ekranda",
+   "platform": "phone",
+   "category": "Finans",
+   "tone": "#0C4A38",
+   "page": "https://atasoyyazilim.com/indir/eymen-gelir/",
+   "highlights": [
+    "Gelir gider özeti",
+    "Fatura hatırlatma",
+    "ZIP yedek"
+   ],
+   "featured": true,
+   "hidden": false,
+   "packageName": "com.eymen.gelir",
+   "versionCode": 7,
+   "versionName": "0.6.1",
+   "minSdk": 26,
+   "label": "EYMEN GELİR",
+   "sha256": "df9574f9445847ddd14e19672689d3f6f3d8abc488ae639a4ffb155f1795011d",
+   "debugSigned": false,
+   "assetId": 706805535,
+   "sizeBytes": 8903979,
+   "apkUrl": "https://github.com/mmustafatasoy/Gelirgider/releases/download/v0.6.1/app-release.apk",
+   "updatedAt": "2026-11-03T19:24:32Z",
+   "downloads": 2,
+   "notes": [
+    "EYMEN GELİR imzalı Android Release. Kaynak: 9bb5bfa1bdb6fd5d27d90f93bb2efdebaa8d7fcc. Yükl"
+   ],
+   "status": "ready",
+   "icon": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/icons/eymen-gelir.png",
+   "shots": [
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-gelir/01.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-gelir/02.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-gelir/03.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-gelir/04.webp",
+     "w": 360,
+     "h": 640
+    }
+   ]
+  },
+  {
+   "id": "eymen-os-tv",
+   "name": "EYMEN OS TV",
+   "tagline": "Televizyona yeni ana ekran",
+   "platform": "tv",
+   "category": "TV",
+   "tone": "#1E2A6B",
+   "page": "https://atasoyyazilim.com/indir/eymen-os/",
+   "highlights": [
+    "Yeni ana ekran",
+    "Telefondan kurulum",
+    "Otomatik güncelleme"
+   ],
+   "featured": true,
+   "hidden": false,
+   "packageName": "com.eymen.os",
+   "versionCode": 1,
+   "versionName": "1.0.0",
+   "minSdk": 26,
+   "label": "EYMEN OS",
+   "sha256": "25e88cb3cba6a60ca692c242aabde58d56aa8195875b28cbd4d9327c2f857f86",
+   "debugSigned": false,
+   "assetId": 706640764,
+   "sizeBytes": 7815773,
+   "apkUrl": "https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/download/eymen-os-v1.0.0/EYMEN-OS-TV.apk",
+   "updatedAt": "2026-11-03T18:27:26Z",
+   "downloads": 7,
+   "notes": [
+    "EYMEN OS TV 1.0.0",
+    "Orijinal yayın tarihi: 2026-11-02",
+    "Android 11 / Vestel 17MB170 hedef cihaz. Telefon ve televizyon APK dosyaları ayrı sunulur.",
+    "Orijinal sürüm açıklaması"
+   ],
+   "status": "ready",
+   "icon": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/icons/eymen-os.png",
+   "shots": [
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-os/01.webp",
+     "w": 427,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-os/02.webp",
+     "w": 427,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-os/03.webp",
+     "w": 427,
+     "h": 640
+    }
+   ]
+  },
+  {
+   "id": "eymen-kurulum",
+   "name": "EYMEN Kurulum",
+   "tagline": "TV kurulumunu telefondan yap",
+   "platform": "phone",
+   "category": "Araçlar",
+   "tone": "#1E2A6B",
+   "page": "https://atasoyyazilim.com/indir/eymen-os/",
+   "highlights": [
+    "Wi-Fi ile bağlanır",
+    "Hızlı güncelleme",
+    "Eski ekrana dönüş"
+   ],
+   "featured": false,
+   "hidden": false,
+   "packageName": "com.eymen.kurulum",
+   "versionCode": 1,
+   "versionName": "1.0.0",
+   "minSdk": 26,
+   "label": "EYMEN Kurulum",
+   "sha256": "dc2d9cfed6ca11c78c83ba7a96d94acbb7732c4c9aec45f9041e4e65a9d8e484",
+   "debugSigned": false,
+   "assetId": 706640762,
+   "sizeBytes": 792513,
+   "apkUrl": "https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/download/eymen-os-v1.0.0/EYMEN-Kurulum.apk",
+   "updatedAt": "2026-11-03T18:27:26Z",
+   "downloads": 7,
+   "notes": [
+    "EYMEN OS TV 1.0.0",
+    "Orijinal yayın tarihi: 2026-11-02",
+    "Android 11 / Vestel 17MB170 hedef cihaz. Telefon ve televizyon APK dosyaları ayrı sunulur.",
+    "Orijinal sürüm açıklaması"
+   ],
+   "status": "ready",
+   "icon": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/icons/eymen-os.png",
+   "shots": [
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-os/01.webp",
+     "w": 427,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-os/02.webp",
+     "w": 427,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/eymen-os/03.webp",
+     "w": 427,
+     "h": 640
+    }
+   ]
+  },
+  {
+   "id": "nur-kuran",
+   "name": "NUR Kur’an-ı Kerim",
+   "tagline": "Sesli Kur’an ve Türkçe meal",
+   "platform": "phone",
+   "category": "İbadet",
+   "tone": "#0E4F46",
+   "page": "https://atasoyyazilim.com/indir/nur-kuran/",
+   "highlights": [
+    "114 sure",
+    "Türkçe meal",
+    "Elifba"
+   ],
+   "featured": true,
+   "hidden": false,
+   "packageName": "com.nur.quran",
+   "versionCode": 10,
+   "versionName": "0.9.0",
+   "minSdk": 26,
+   "label": "NUR • Kur’an ve İslam",
+   "sha256": "24be9133ba7236adaad757d499a4b2c1e5599616a8c600b08178c54b78498f98",
+   "debugSigned": true,
+   "assetId": 697422052,
+   "sizeBytes": 22220863,
+   "apkUrl": "https://github.com/mmustafatasoy/atasoyyazilim-downloads/releases/download/nur-v0.9.0-test/NUR-Quran-v0.9.0-TEST.apk",
+   "updatedAt": "2026-11-01T05:18:37Z",
+   "downloads": 2,
+   "notes": [
+    "NUR Quran Android 0.9.0 - TEST / DEBUG APK only.",
+    "This APK was built from the public official NUR repository, pinned to commit a802b53cc623d",
+    "WARNING: Debug signing key is generated by CI and is not suitable for production app updat",
+    "Do not treat this as a stable signed production release. Installing a future production AP"
+   ],
+   "status": "test",
+   "icon": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/icons/nur-kuran.png",
+   "shots": [
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/nur-kuran/01.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/nur-kuran/02.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/nur-kuran/03.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/nur-kuran/04.webp",
+     "w": 360,
+     "h": 640
+    }
+   ]
+  },
+  {
+   "id": "tekno-play",
+   "name": "Tekno Play",
+   "tagline": "Video ve canlı TV oynatıcı",
+   "platform": "phone",
+   "category": "Video",
+   "tone": "#3B2A8C",
+   "page": "https://atasoyyazilim.com/yazilim/tekno-play/",
+   "highlights": [
+    "Video",
+    "Canlı TV",
+    "Yüzen pencere"
+   ],
+   "featured": false,
+   "hidden": false,
+   "status": "soon",
+   "packageName": "",
+   "versionCode": 0,
+   "versionName": "",
+   "minSdk": 26,
+   "sizeBytes": 0,
+   "sha256": "",
+   "apkUrl": "",
+   "updatedAt": "",
+   "downloads": 0,
+   "notes": [],
+   "icon": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/icons/tekno-play.png",
+   "shots": [
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/tekno-play/01.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/tekno-play/02.webp",
+     "w": 360,
+     "h": 640
+    },
+    {
+     "url": "https://raw.githubusercontent.com/mmustafatasoy/atasoyyazilim-downloads/store-feed/store/shots/tekno-play/03.webp",
+     "w": 360,
+     "h": 640
+    }
+   ]
+  }
+ ]
+}
