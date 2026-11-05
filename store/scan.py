@@ -46,8 +46,10 @@ def inspect(asset):
 def clean_notes(body):
     notes = []
     for line in (body or "").splitlines():
-        line = re.sub(r"^[\s>*#-]+|[*`_]+", "", line).strip()
-        if 4 <= len(line) and not line.lower().startswith(("http", "sha", "```")):
+        if not re.match(r"^\s*(?:[-*•]|\d+[.)])\s+", line):
+            continue
+        line = re.sub(r"^\s*(?:[-*•]|\d+[.)])\s+|[*`_]+", "", line).strip()
+        if 4 <= len(line) and not re.search(r"https?:|sha-?256|kaynak:", line, re.I):
             notes.append(line[:90])
         if len(notes) == 4:
             break
@@ -68,6 +70,7 @@ def from_release(src, prev):
     pattern = re.compile(src["tag"])
     asset_re = re.compile(src.get("asset", r"\.apk$"), re.I)
     rows = [r for r in releases(src["repo"]) if pattern.search(r["tag_name"]) and (src.get("prerelease") or not r["prerelease"])]
+    rows.sort(key=lambda r: ([int(n) for n in re.findall(r"\d+", r["tag_name"])], r["published_at"]), reverse=True)
     for rel in rows:
         asset = next((a for a in rel["assets"] if asset_re.search(a["name"]) and a["state"] == "uploaded"), None)
         if asset is None:
