@@ -24,7 +24,14 @@ def releases(repo, cache={}):
 def inspect(asset):
     with tempfile.TemporaryDirectory() as d:
         apk = pathlib.Path(d) / "a.apk"
-        urllib.request.urlretrieve(asset["browser_download_url"], apk)
+        for attempt in range(4):
+            try:
+                urllib.request.urlretrieve(asset["browser_download_url"], apk)
+                break
+            except Exception:
+                if attempt == 3:
+                    raise
+                time.sleep(10)
         out = subprocess.run([AAPT, "dump", "badging", str(apk)], capture_output=True, text=True, check=True).stdout
         pkg = re.search(r"package: name='([^']+)' versionCode='(\d+)' versionName='([^']*)'", out)
         sdk = re.search(r"(?:minSdkVersion|sdkVersion):'(\d+)'", out)
