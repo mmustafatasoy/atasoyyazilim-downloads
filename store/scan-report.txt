@@ -1,7 +1,7 @@
 ATLANDI  eymen-store: uygun sürüm yok
 TAMAM    eymen-gelir: com.eymen.gelir 0.6.1 (7) ready
 TAMAM    eymen-tv: com.eymen.uydukontrol 2.5 (25) ready
-HATA     eymen-os-tv: HTTP Error 504: Gateway Time-out
+TAMAM    eymen-os-tv: com.eymen.os 1.1.1 (7) ready
 TAMAM    eymen-kurulum: com.eymen.kurulum 1.1.1 (7) ready
 TAMAM    nur-kuran: com.nur.quran 0.9.0 (10) test
 TAMAM    tekno-play:   (0) soon
