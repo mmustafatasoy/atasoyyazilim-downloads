@@ -117,6 +117,25 @@ class StoreRegistrationTests(unittest.TestCase):
             register(self.root, self.tag, self.release,
                      self.badging, self.apk, SIGNER)
 
+    def test_same_version_code_cannot_publish_a_new_version(self):
+        register(self.root, self.tag, self.release, self.badging, self.apk, SIGNER)
+        next_tag = "store-ornek-app-v1.0.1"
+        badge = self.badging.replace("versionName='1.0.0'", "versionName='1.0.1'")
+        with self.assertRaisesRegex(ValueError, "increase Android versionCode"):
+            register(self.root, next_tag, self.make_release(next_tag), badge, self.apk, SIGNER)
+
+    def test_duplicate_package_cannot_register_twice(self):
+        path = self.root / "store" / "catalog.json"
+        path.write_text(json.dumps({
+            "schemaVersion": 1,
+            "applications": [{
+                "id": "another-app", "packageName": "com.atasoy.ornek",
+                "releaseRepo": "atasoyyazilim-downloads"
+            }]
+        }), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "already belongs"):
+            register(self.root, self.tag, self.release, self.badging, self.apk, SIGNER)
+
     def test_release_tag_must_match_apk(self):
         bad = self.make_release("store-ornek-app-v2.0.0")
         with self.assertRaisesRegex(ValueError, "tag version must match"):
