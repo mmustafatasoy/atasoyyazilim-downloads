@@ -16,7 +16,8 @@
       "releaseRepo": "EymenTv",
       "tagPrefix": "eymen-tv-v",
       "assetName": "EYMEN-TV.apk",
-      "featured": true
+      "featured": true,
+      "packageName": "com.eymen.uydukontrol"
     },
     {
       "id": "eymen-os-tv",
@@ -76,7 +77,8 @@
       "releaseRepo": "Gelirgider",
       "tagPrefix": "v",
       "assetName": "app-release.apk",
-      "featured": true
+      "featured": true,
+      "packageName": "com.eymen.gelir"
     },
     {
       "id": "teknoplay",
