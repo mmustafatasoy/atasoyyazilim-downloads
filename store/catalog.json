@@ -32,7 +32,8 @@
       "releaseRepo": "atasoyyazilim-downloads",
       "tagPrefix": "eymen-os-v",
       "assetName": "EYMEN-OS-TV.apk",
-      "featured": true
+      "featured": true,
+      "packageName": "com.eymen.os"
     },
     {
       "id": "eymen-kurulum",
@@ -47,7 +48,8 @@
       "releaseRepo": "atasoyyazilim-downloads",
       "tagPrefix": "eymen-os-v",
       "assetName": "EYMEN-Kurulum.apk",
-      "featured": false
+      "featured": false,
+      "packageName": "com.eymen.kurulum"
     },
     {
       "id": "nur-kuran",
@@ -104,7 +106,8 @@
       "icon": "101",
       "accent": "#DD8C29",
       "pageUrl": "https://atasoyyazilim.com",
-      "featured": false
+      "featured": false,
+      "packageName": "com.atasoyyazilim.eymen101"
     },
     {
       "id": "eymen-launcher",
