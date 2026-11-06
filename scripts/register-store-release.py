@@ -108,7 +108,11 @@ def register(root, tag, release, badging, apk, signer):
             "Exactly one signed APK named app-release.apk is required")
     apk_asset = apks[0]
     asset_url(release, apk_asset)
-    file_sha = hashlib.sha256(apk.read_bytes()).hexdigest()
+    sha = hashlib.sha256()
+    with apk.open("rb") as apk_stream:
+        for block in iter(lambda: apk_stream.read(1024 * 1024), b""):
+            sha.update(block)
+    file_sha = sha.hexdigest()
     declared = apk_asset.get("digest") or ""
     if declared:
         require(declared.lower() == "sha256:" + file_sha, "APK SHA-256 does not match GitHub")
