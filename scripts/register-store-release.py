@@ -129,6 +129,9 @@ def register(root, tag, release, badging, apk, signer):
     require(isinstance(apps, list), "Invalid applications list")
     existing = next((x for x in apps if x.get("id") == app_id), None)
     require(existing is not None or len(apps) < 80, "Store catalog limit reached")
+    for other in apps:
+        if other is not existing and other.get("packageName") == package:
+            raise ValueError("APK package already belongs to another store entry")
     if existing is not None:
         require(existing.get("releaseRepo") == "atasoyyazilim-downloads"
                 and existing.get("tagPrefix") == "store-" + app_id + "-v"
@@ -142,6 +145,10 @@ def register(root, tag, release, badging, apk, signer):
         prior_code = existing.get("androidVersionCode")
         require(not isinstance(prior_code, int) or version_code >= prior_code,
                 "Android versionCode must not decrease")
+        prior_version = existing.get("lastRegisteredVersion")
+        if prior_version is not None and prior_version != version:
+            require(not isinstance(prior_code, int) or version_code > prior_code,
+                    "New APK version must increase Android versionCode")
 
     submission_file = root / "store" / "submissions" / (app_id + ".json")
     meta = clean_meta(json.loads(submission_file.read_text(encoding="utf-8"))) \
@@ -174,6 +181,7 @@ def register(root, tag, release, badging, apk, signer):
     entry["packageName"] = package
     entry["signerSha256"] = signer
     entry["androidVersionCode"] = version_code
+    entry["lastRegisteredVersion"] = version
     entry["status"] = "test" if release.get("prerelease") else "published"
 
     media = []
