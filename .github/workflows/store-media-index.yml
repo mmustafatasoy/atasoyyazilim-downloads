@@ -1,0 +1,33 @@
+name: Update ATASOY STORE media index
+on:
+  push:
+    branches: [main]
+    paths:
+      - "store/media/**"
+      - "store/catalog.json"
+      - "scripts/build-media-index.py"
+      - ".github/workflows/store-media-index.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  index:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Find all app photos and videos
+        run: python scripts/build-media-index.py
+      - name: Publish media index only when it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add store/media-index.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(store): refresh public media index"
+            git push
+          fi
