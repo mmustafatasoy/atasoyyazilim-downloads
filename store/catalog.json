@@ -60,8 +60,8 @@
       "pageUrl": "https://atasoyyazilim.com/yazilim/nur-kuran/",
       "releaseRepo": "atasoyyazilim-downloads",
       "tagPrefix": "nur-v",
-      "assetName": "NUR-Quran-v0.9.0-TEST.apk",
-      "featured": true
+      "featured": true,
+      "assetPrefix": "NUR-Quran-"
     },
     {
       "id": "eymen-gelir",
