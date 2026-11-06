@@ -1,0 +1,119 @@
+name: ATASOY STORE - automatic app registration
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Published tag, e.g. store-yeni-uygulama-v1.0.0"
+        required: true
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - "scripts/register-store-release.py"
+      - "tests/test_register_store_release.py"
+      - ".github/workflows/store-auto-register.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: store-catalog-registration
+  cancel-in-progress: false
+
+jobs:
+  tests:
+    name: Verify registration rules
+    if: github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests
+        run: |
+          python -m py_compile scripts/register-store-release.py
+          python -m unittest discover -s tests -p "test_register_store_release.py" -v
+
+  register:
+    name: Check signed APK and publish catalog
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'release' && startsWith(github.event.release.tag_name, 'store-'))
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.event.release.tag_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Prepare Android APK metadata tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)
+          "$SDKMANAGER" --install "build-tools;36.0.0"
+      - name: Download only our public signed application release
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG="$RELEASE_TAG"
+          if [[ ! "$TAG" =~ ^store-[a-z0-9-]{2,48}-v[0-9]+(\.[0-9]+){0,2}([-+][A-Za-z0-9.-]+)?$ ]]; then
+            echo "::error::Use a tag like store-yeni-uygulama-v1.0.0"
+            exit 1
+          fi
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
+          mkdir -p "$RUNNER_TEMP/store-apk"
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$TAG" > "$RUNNER_TEMP/store-release.json"
+          for attempt in 1 2 3 4 5; do
+            if gh release download "$TAG" --repo "$GITHUB_REPOSITORY" \
+              --pattern "app-release.apk" --dir "$RUNNER_TEMP/store-apk" \
+              --clobber && test -s "$RUNNER_TEMP/store-apk/app-release.apk"; then
+              break
+            fi
+            sleep 10
+          done
+          test -s "$RUNNER_TEMP/store-apk/app-release.apk"
+          echo "APK=$RUNNER_TEMP/store-apk/app-release.apk" >> "$GITHUB_ENV"
+      - name: Verify APK signature and extract package/version
+        shell: bash
+        run: |
+          set -euo pipefail
+          TOOLS="$ANDROID_HOME/build-tools/36.0.0"
+          "$TOOLS/apksigner" verify "$APK"
+          "$TOOLS/aapt" dump badging "$APK" > "$RUNNER_TEMP/store-badging.txt"
+          CERT=$("$TOOLS/apksigner" verify --print-certs "$APK" |
+            sed -n 's/^Signer #1 certificate SHA-256 digest: //p' | head -n 1 | tr -d ':' | tr '[:upper:]' '[:lower:]')
+          test -n "$CERT"
+          echo "CERT_SHA256=$CERT" >> "$GITHUB_ENV"
+      - name: Register store entry, screenshot/video links and icon
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/register-store-release.py \
+            --tag "$TAG" \
+            --release-json "$RUNNER_TEMP/store-release.json" \
+            --badging "$RUNNER_TEMP/store-badging.txt" \
+            --apk "$APK" \
+            --signer-sha256 "$CERT_SHA256"
+          python scripts/build-media-index.py
+      - name: Publish catalog updates if necessary
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add store/catalog.json store/media-index.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(store): register $TAG"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          else
+            echo "Catalog already up to date."
+          fi
