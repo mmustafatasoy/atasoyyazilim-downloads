@@ -86,15 +86,18 @@
     {
       "id": "teknoplay",
       "name": "Tekno Play",
-      "description": "Video, canlı TV ve medya oynatıcı",
+      "description": "Video, canlı TV ve medya oynatıcı. Yayımlanan APK debug/test sürümüdür.",
       "category": "Medya",
       "platform": "Android Telefon",
-      "status": "in-progress",
+      "status": "test",
       "icon": "▶",
       "accent": "#BD41DE",
       "pageUrl": "https://atasoyyazilim.com/yazilim/tekno-play/",
       "featured": true,
-      "packageName": "com.teknoplay.app"
+      "packageName": "com.teknoplay.app",
+      "releaseRepo": "atasoyyazilim-downloads",
+      "tagPrefix": "store-teknoplay-v",
+      "assetName": "app-release.apk"
     },
     {
       "id": "eymen-101",
@@ -115,15 +118,18 @@
     {
       "id": "eymen-launcher",
       "name": "EYMEN Launcher",
-      "description": "Kişiselleştirilebilir Android ana ekranı",
+      "description": "Android 8+ için kısıtlı izinli EYMEN Launcher önizlemesi. Tam sürüm değildir.",
       "category": "Araçlar",
       "platform": "Android Telefon",
-      "status": "in-progress",
+      "status": "test",
       "icon": "EL",
       "accent": "#E57565",
       "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-launcher/",
       "featured": false,
-      "packageName": "com.eymen.launcher"
+      "packageName": "com.eymen.launcher.debug",
+      "releaseRepo": "atasoyyazilim-downloads",
+      "tagPrefix": "store-eymen-launcher-v",
+      "assetName": "app-release.apk"
     }
   ]
 }
