@@ -11,7 +11,7 @@ apps = catalog.get("applications")
 assert isinstance(apps, list) and 0 < len(apps) <= 80, "Invalid app catalog size"
 ids = set()
 packages = set()
-trusted = {"atasoyyazilim-downloads", "EymenTv", "Gelirgider"}
+trusted = {"atasoyyazilim-downloads", "EymenTv", "Gelirgider", "EymenBrowser"}
 configured = 0
 for a in apps:
     app_id = a.get("id")
