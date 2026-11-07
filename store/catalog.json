@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-06",
+  "updatedAt": "2026-11-07",
   "homepage": "https://atasoyyazilim.com",
   "applications": [
     {
@@ -99,15 +99,18 @@
     {
       "id": "eymen-101",
       "name": "Eymen 101",
-      "description": "Okey 101 oyunu — geliştirme aşamasında",
+      "description": "Çevrim dışı 101 Okey, üç bot ve kayıtlı maçlar. Test sürümü; tüm ekranlar henüz tamamlanmadı.",
       "category": "Oyun",
       "platform": "Android Telefon",
-      "status": "in-progress",
+      "status": "test",
       "icon": "101",
       "accent": "#DD8C29",
       "pageUrl": "https://atasoyyazilim.com",
       "featured": false,
-      "packageName": "com.atasoyyazilim.eymen101"
+      "packageName": "com.atasoyyazilim.eymen101",
+      "releaseRepo": "Eymen101",
+      "tagPrefix": "v",
+      "assetPrefix": "Eymen101-"
     },
     {
       "id": "eymen-launcher",
