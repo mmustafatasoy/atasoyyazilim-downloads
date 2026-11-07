@@ -1,9 +1,5 @@
 name: Capture actual Eymen101 Android app screen
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/store-capture-eymen101-screen.yml"
   workflow_dispatch:
 permissions:
   contents: read
