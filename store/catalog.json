@@ -102,18 +102,15 @@
     {
       "id": "eymen-101",
       "name": "Eymen 101",
-      "description": "Çevrim dışı 101 Okey, üç bot ve kayıtlı maçlar. Test sürümü; tüm ekranlar henüz tamamlanmadı.",
+      "description": "Eymen 101 Okey oyunu. APK yayını geçici olarak doğrulanamıyor; indirme bağlantısı gösterilmiyor.",
       "category": "Oyun",
       "platform": "Android Telefon",
-      "status": "test",
+      "status": "in-progress",
       "icon": "101",
       "accent": "#DD8C29",
       "pageUrl": "https://atasoyyazilim.com",
       "featured": false,
-      "packageName": "com.atasoyyazilim.eymen101",
-      "releaseRepo": "Eymen101",
-      "tagPrefix": "v",
-      "assetPrefix": "Eymen101-"
+      "packageName": "com.atasoyyazilim.eymen101"
     },
     {
       "id": "eymen-launcher",
