@@ -44,7 +44,7 @@
       "status": "published",
       "icon": "EK",
       "accent": "#1D95C7",
-      "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-os/",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-kurulum/",
       "releaseRepo": "atasoyyazilim-downloads",
       "tagPrefix": "eymen-os-v",
       "assetName": "EYMEN-Kurulum.apk",
@@ -108,7 +108,7 @@
       "status": "in-progress",
       "icon": "101",
       "accent": "#DD8C29",
-      "pageUrl": "https://atasoyyazilim.com",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-101/",
       "featured": false,
       "packageName": "com.atasoyyazilim.eymen101"
     },
@@ -127,6 +127,83 @@
       "releaseRepo": "atasoyyazilim-downloads",
       "tagPrefix": "store-eymen-launcher-v",
       "assetName": "app-release.apk"
+    },
+    {
+      "id": "eymen-browser",
+      "name": "EYMEN Browser",
+      "description": "Android telefon için sekmeli tarayıcı, indirme yöneticisi ve gizli sekme; geliştirme/test aşamasında.",
+      "category": "Araçlar",
+      "platform": "Android Telefon",
+      "status": "in-progress",
+      "icon": "EB",
+      "accent": "#B86D54",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-browser/",
+      "featured": true,
+      "packageName": "com.eymen.browser.telefon"
+    },
+    {
+      "id": "eymen-kids",
+      "name": "EYMEN Kids",
+      "description": "Çocuk videoları, seri-bölüm listeleri ve çevrimdışı video indirme. TV uyumu test aşamasında.",
+      "category": "Eğlence",
+      "platform": "Android Telefon / TV",
+      "status": "test",
+      "icon": "EK",
+      "accent": "#D38A54",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-kids/",
+      "featured": true,
+      "packageName": "com.eymen.kids"
+    },
+    {
+      "id": "eymen-medya",
+      "name": "EYMEN Medya",
+      "description": "Telefon ve tablet için büyük simgeli medya merkezi. Android Auto video görünümü desteklenmez.",
+      "category": "Medya",
+      "platform": "Android Telefon",
+      "status": "in-progress",
+      "icon": "EM",
+      "accent": "#7A8E56",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-medya/",
+      "featured": false,
+      "packageName": "com.eymen.media"
+    },
+    {
+      "id": "run-children",
+      "name": "RUN CHILDREN",
+      "description": "Aile karakterleriyle üç şeritli 3D sonsuz koşu oyunu; tarayıcı prototipi geliştirilmekte.",
+      "category": "Oyun",
+      "platform": "Web / Oyun",
+      "status": "in-progress",
+      "icon": "RC",
+      "accent": "#C46A45",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/run-children/",
+      "featured": false
+    },
+    {
+      "id": "eymen-baslatici",
+      "name": "EYMEN Başlatıcı",
+      "description": "Whale TV için canlı TV ve uygulamaları birleştirmeyi hedefleyen alternatif ana ekran projesi.",
+      "category": "TV",
+      "platform": "Android TV",
+      "status": "in-progress",
+      "icon": "EB",
+      "accent": "#83775C",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-baslatici/",
+      "featured": false,
+      "packageName": "com.eymen.baslatici"
+    },
+    {
+      "id": "atasoy-store",
+      "name": "ATASOY STORE",
+      "description": "Atasoy Yazılım uygulama mağazası; beta test, APK indirme, sürüm takibi ve Android kurulum.",
+      "category": "Araçlar",
+      "platform": "Android Telefon",
+      "status": "test",
+      "icon": "AS",
+      "accent": "#B16E56",
+      "pageUrl": "https://atasoyyazilim.com/yazilim/atasoy-store/",
+      "featured": true,
+      "packageName": "com.atasoyyazilim.store"
     }
   ]
 }
