@@ -131,15 +131,18 @@
     {
       "id": "eymen-browser",
       "name": "EYMEN Browser",
-      "description": "Android telefon için sekmeli tarayıcı, indirme yöneticisi ve gizli sekme; geliştirme/test aşamasında.",
+      "description": "GeckoView tabanlı Android telefon tarayıcısı, sekmeler ve indirme yönetimi. v1.0.18 imzalı ARM64 APK; gerçek cihaz kabul testleri sürüyor.",
       "category": "Araçlar",
       "platform": "Android Telefon",
-      "status": "in-progress",
+      "status": "test",
       "icon": "EB",
       "accent": "#B86D54",
       "pageUrl": "https://atasoyyazilim.com/yazilim/eymen-browser/",
       "featured": true,
-      "packageName": "com.eymen.browser.telefon"
+      "packageName": "com.eymen.browser.telefon",
+      "releaseRepo": "EymenBrowser",
+      "tagPrefix": "v",
+      "assetName": "EymenBrowser-Android-Phone-arm64-v8a.apk"
     },
     {
       "id": "eymen-kids",
