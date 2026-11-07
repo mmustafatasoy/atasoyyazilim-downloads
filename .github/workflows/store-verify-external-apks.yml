@@ -1,0 +1,57 @@
+name: ATASOY STORE - verify three external APK releases
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/store-verify-external-apks.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: Check APK metadata and signing
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Prepare Android APK inspection tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          SDKMANAGER=$(find "$ANDROID_HOME/cmdline-tools" -type f -name sdkmanager | head -n 1)
+          "$SDKMANAGER" --install "build-tools;36.0.0"
+      - name: Verify release packages against actual APK manifests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          AAPT="$ANDROID_HOME/build-tools/36.0.0/aapt"
+          SIGN="$ANDROID_HOME/build-tools/36.0.0/apksigner"
+          mkdir -p "$RUNNER_TEMP/audit"
+          echo "## Official APK metadata" >> "$GITHUB_STEP_SUMMARY"
+          while IFS='|' read -r repo tag asset expected; do
+            [ -n "$repo" ] || continue
+            folder="$RUNNER_TEMP/audit/${repo##*/}"
+            mkdir -p "$folder"
+            gh release download "$tag" --repo "$repo" --pattern "$asset" --dir "$folder" --clobber
+            apk="$folder/$asset"
+            test -s "$apk"
+            "$SIGN" verify "$apk"
+            badge=$("$AAPT" dump badging "$apk" | head -n 1)
+            echo "$badge"
+            if [[ "$badge" != *"name='$expected'"* ]]; then
+              echo "::error::$repo/$tag expected $expected but got $badge"
+              exit 1
+            fi
+            sha=$(sha256sum "$apk" | awk '{print $1}')
+            echo "### $repo · $tag" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Asset: \`$asset\`" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Package: \`$expected\`" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Actual APK: \`$badge\`" >> "$GITHUB_STEP_SUMMARY"
+            echo "- APK SHA-256: \`$sha\`" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Signing: Android apksigner verification successful" >> "$GITHUB_STEP_SUMMARY"
+          done <<'APK_LIST'
+          mmustafatasoy/Eymen101|v0.1.1|Eymen101-v0.1.1-release.apk|com.atasoyyazilim.eymen101
+          mmustafatasoy/TeknoPlay|v0.3.1|TeknoPlay-0.3.1-debug.apk|com.teknoplay.app
+          mmustafatasoy/EYMENLAUNCHER|preview-v0.1.1-build-2|EYMEN-Launcher-Preview.apk|com.eymen.launcher.debug
+          APK_LIST
