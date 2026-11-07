@@ -1,4 +1,4 @@
-name: ATASOY STORE - verify three external APK releases
+name: ATASOY STORE - verify public Eymen101 APK
 on:
   push:
     branches: [main]
@@ -52,6 +52,4 @@ jobs:
             echo "- Signing: Android apksigner verification successful" >> "$GITHUB_STEP_SUMMARY"
           done <<'APK_LIST'
           mmustafatasoy/Eymen101|v0.1.1|Eymen101-v0.1.1-release.apk|com.atasoyyazilim.eymen101
-          mmustafatasoy/TeknoPlay|v0.3.1|TeknoPlay-0.3.1-debug.apk|com.teknoplay.app
-          mmustafatasoy/EYMENLAUNCHER|preview-v0.1.1-build-2|EYMEN-Launcher-Preview.apk|com.eymen.launcher.debug
           APK_LIST
