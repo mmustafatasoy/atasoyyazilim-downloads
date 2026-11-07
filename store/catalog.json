@@ -198,15 +198,18 @@
     {
       "id": "atasoy-store",
       "name": "ATASOY STORE",
-      "description": "Atasoy Yazılım uygulama mağazası; beta test, APK indirme, sürüm takibi ve Android kurulum.",
+      "description": "Atasoy Yazılım Android uygulama mağazası: APK indirme, yüklü uygulama durumu ve güncelleme kontrolü. v1.0.0 imzalı dağıtım.",
       "category": "Araçlar",
       "platform": "Android Telefon",
-      "status": "test",
+      "status": "published",
       "icon": "AS",
       "accent": "#B16E56",
       "pageUrl": "https://atasoyyazilim.com/yazilim/atasoy-store/",
       "featured": true,
-      "packageName": "com.atasoyyazilim.store"
+      "packageName": "com.atasoyyazilim.store",
+      "releaseRepo": "atasoyyazilim-downloads",
+      "tagPrefix": "store-atasoy-store-v",
+      "assetName": "app-release.apk"
     }
   ]
 }
