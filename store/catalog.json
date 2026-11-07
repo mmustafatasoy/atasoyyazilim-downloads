@@ -209,7 +209,10 @@
       "packageName": "com.atasoyyazilim.store",
       "releaseRepo": "atasoyyazilim-downloads",
       "tagPrefix": "store-atasoy-store-v",
-      "assetName": "app-release.apk"
+      "assetName": "app-release.apk",
+      "signerSha256": "d264e7675254aee0c4a9a61a57cc45a4c8bb6e5421e66faf77342edbb54fce90",
+      "androidVersionCode": 19,
+      "lastRegisteredVersion": "1.0.0"
     }
   ]
 }
