@@ -1,0 +1,68 @@
+name: Capture actual Eymen101 Android app screen
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/store-capture-eymen101-screen.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  capture:
+    name: Run released APK and capture actual UI
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Download official released Eymen101 APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/real-apk"
+          gh release download v0.1.1 --repo mmustafatasoy/Eymen101 \
+            --pattern Eymen101-v0.1.1-release.apk --dir "$RUNNER_TEMP/real-apk"
+          test -s "$RUNNER_TEMP/real-apk/Eymen101-v0.1.1-release.apk"
+      - name: Launch actual app on Android emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          ram-size: 3072M
+          disk-size: 3072M
+          emulator-boot-timeout: 240
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none -no-metrics
+          script: |
+            set -euo pipefail
+            adb install "$RUNNER_TEMP/real-apk/Eymen101-v0.1.1-release.apk"
+            adb shell monkey -p com.atasoyyazilim.eymen101 -c android.intent.category.LAUNCHER 1
+            sleep 18
+            mkdir -p "$GITHUB_WORKSPACE/real-screen"
+            adb exec-out screencap -p > "$GITHUB_WORKSPACE/real-screen/eymen101-actual-01.png"
+            test -s "$GITHUB_WORKSPACE/real-screen/eymen101-actual-01.png"
+            python3 -m pip -q install pillow
+            python3 - <<'PY'
+            from PIL import Image, ImageStat
+            from pathlib import Path
+            p=Path("real-screen/eymen101-actual-01.png")
+            im=Image.open(p).convert("RGB")
+            stat=ImageStat.Stat(im.resize((256,256)))
+            print("Actual Android emulator screenshot:", im.size, "channel stddev:", stat.stddev)
+            if im.width < 400 or im.height < 400 or max(stat.stddev) < 7:
+                raise SystemExit("Screen is blank or invalid: do NOT publish")
+            PY
+      - name: Keep real screenshot for visual review (not automatically published)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eymen101-real-emulator-screen
+          path: real-screen/*.png
+          retention-days: 14
