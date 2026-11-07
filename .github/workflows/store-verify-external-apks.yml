@@ -1,9 +1,5 @@
 name: ATASOY STORE - verify public Eymen101 APK
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/store-verify-external-apks.yml"
   workflow_dispatch:
 permissions:
   contents: read
